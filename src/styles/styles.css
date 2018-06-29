@@ -1,0 +1,130 @@
+.new-doc-upload{
+  text-align: -webkit-center;
+  border-right: 1px solid #d2d2d2;
+  min-height: 250px;
+}
+
+.mg-top-40{
+  margin-top: 40px;
+}
+
+.mg-top-25{
+  margin-top: 25px;
+}
+
+.mg-top-20{
+  margin-top: 20px;
+}
+
+.mg-top-30{
+  margin-top: 30px;
+}
+
+.mg-top-10{
+  margin-top: 10px;
+}
+
+.mg-top-5{
+  margin-top: 5px;
+}
+
+.mg-btm-10{
+  margin-bottom: 10px;
+}
+
+.mg-btm-0{
+  margin-bottom: 0;
+}
+
+.border-none{
+  border: none;
+}
+
+.border-top-none{
+  border-top: none;
+}
+
+.padding-left-15{
+  padding-left: 15px;
+}
+/*.ng-invalid:not(form).ng-dirty:not(form) {*/
+  /*border: 1px solid red;*/
+/*}*/
+
+hr{
+  margin-top: 0;
+}
+
+.pointer{
+  cursor: pointer;
+}
+
+.red {
+  color: red;
+}
+.wj-content .custom_flex_sheet_header{
+  text-align: center !important;
+}
+
+.empty-grid-msg{
+  border: 1px solid #d2d2d2;
+  padding: 10px;
+  text-align: center;
+  font-size: 12px;
+}
+
+.empty-dashboard {
+  position: absolute;
+  top: 35%;
+}
+
+.welcome-msg{
+  margin-top: 20px;
+  width: 350px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.empty-records {
+  height: calc(100vh - 200px);
+  vertical-align: middle;
+}
+
+.empty-msg {
+  margin-top: 50px;
+  width: 350px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.border-tb {
+  border-top: 1px solid #d2d2d2;
+  border-bottom: 1px solid #d2d2d2;
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+
+
+.overview.table.table > tbody > tr > td:last-child{
+  text-align: left;
+}
+
+.panel-footer .user_del_btn {
+  margin-right: 5px;
+}
+
+.panel-footer .user_update_btn {
+  margin-left: 5px;
+}
+
+.cst-label {
+  font-weight: bold;
+}
+
+.float-right {
+  float:right;
+}
+
+.form-control[disabled] {
+  color: black;
+}

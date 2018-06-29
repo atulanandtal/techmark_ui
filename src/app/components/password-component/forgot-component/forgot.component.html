@@ -1,0 +1,38 @@
+<div class="text-center">
+  <h4>Forgot your password?</h4>
+  <p>Enter your email below to receive your<br/> password reset instructions</p>
+</div>
+<div class="mg-top-20">
+  <!--<label>Forgot Password</label>-->
+  <form name="form" (ngSubmit)="forgotPassword(forgotPasswordForm)" #forgotPasswordForm="ngForm" novalidate>
+    <div class="has-error">
+      <div class="help-block text-center" *ngIf="apiErrMsg">
+        {{apiErrMsg}}
+      </div>
+    </div>
+    <div class="form-group" [ngClass]="{'has-error' : email.invalid && (email.dirty || email.touched)}">
+      <!--<label>Email</label>-->
+      <input type="email" class="form-control"
+             placeholder="Email Id"
+             [pattern]="constantService.validationRegexMapping.EMAIL"
+             name="userName"
+             [(ngModel)]="userName"
+             #email="ngModel"
+             required />
+      <div class="help-block text-right" *ngIf="email.invalid && (email.dirty || email.touched)">
+        <div *ngIf="email.errors.required">
+          Email Id is required.
+        </div>
+        <div *ngIf="email.errors.pattern">
+          Invalid Email Id.
+        </div>
+      </div>
+    </div>
+    <div class="form-group mg-top-25">
+      <button class="btn btn-info btn-block btn-lg">Send Mail</button>
+    </div>
+    <div class="mg-top-20 text-center">
+      <a [routerLink]="['/login']" href="javascript:;">Return to Login</a>
+    </div>
+  </form>
+</div>

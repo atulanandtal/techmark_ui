@@ -1,0 +1,47 @@
+<div class="text-center">
+  <h4>Reset your password!</h4>
+  <!--<p>Enter your email below to receive your<br/> password reset instructions</p>-->
+</div>
+<div class="mg-top-20">
+  <!--<label>Reset Password</label>-->
+  <form name="form" (ngSubmit)="passwordReset(resetPasswordForm)" #resetPasswordForm="ngForm" novalidate>
+    <div class="form-group" [ngClass]="{'has-error' : newpassword.invalid && (newpassword.dirty || newpassword.touched)}">
+      <label>New Password</label>
+      <input type="password" class="form-control"
+             name="password"
+             [(ngModel)]="password"
+             placeholder="New Password"
+             #newpassword="ngModel"
+             required />
+      <div class="help-block text-right" *ngIf="newpassword.invalid && (newpassword.dirty || newpassword.touched)">
+        <div *ngIf="newpassword.errors?.required">
+          New password is required.
+        </div>
+      </div>
+    </div>
+    <div class="form-group" [ngClass]="{'has-error' : confirmpassword.invalid && (confirmpassword.dirty || confirmpassword.touched)}">
+      <label>Confirm Password</label>
+      <input type="password" class="form-control"
+             name="confirmPassword"
+             [(ngModel)]="confirmPassword"
+             placeholder="Confirm Password"
+             #confirmpassword="ngModel"
+             required
+      />
+      <div class="help-block text-right" *ngIf="confirmpassword.invalid && (confirmpassword.dirty || confirmpassword.touched)">
+        <div *ngIf="confirmpassword.errors?.required">
+          Confirm password is required.
+        </div>
+        <div *ngIf="confirmpassword.errors?.equalTo && confirmPassword">
+          Confirm password does not match with new password.
+        </div>
+      </div>
+    </div>
+    <div class="form-group mg-top-25">
+      <button class="btn btn-info btn-block btn-lg">Reset Password</button>
+    </div>
+    <div class="mg-top-20 text-center">
+      <a [routerLink]="['/login']" href="javascript:;">Return to Login</a>
+    </div>
+  </form>
+</div>

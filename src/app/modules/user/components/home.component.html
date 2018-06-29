@@ -1,0 +1,28 @@
+<div class='col-sm-4'>
+    <ul>
+        <li (click)='subscribeList("TRENDING")' role='button'>Trending</li>
+        <li (click)='subscribeList("ALL_SHARED")' role='button'>All Shared</li>
+        <li (click)='subscribeList("MY_FAVOURITES")' role='button'>My Favorites</li>
+        <li (click)='subscribeList("READ_LATER")' role='button'>Read Later</li>
+        <li (click)='subscribeList("MY_SHARED")' role='button'>My Shared</li>
+    </ul>
+</div>
+<div class='col-sm-20 home-container'>
+    <div class="panel-group">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h1 class='text-center'>{{constantService.headerMapping[pageCategory]}}</h1>
+            </div>
+            <div class="panel-body">
+                <div *ngFor='let card of cardList' class='row'>
+                    <div class='row'>
+                        <div class='col-sm-24'>
+                            <card [cardData]='card'></card>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="panel-footer"></div>
+        </div>
+    </div>
+</div>

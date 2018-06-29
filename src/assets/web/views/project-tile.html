@@ -1,0 +1,49 @@
+<div class="row main-summary-container">
+  <div class="col-lg-24">
+    <div class="row">
+      <div class="col-sm-24 col-md-24 col-lg-19 mid-content-container">
+        <div class="panel panel-default">
+          <div class="panel-heading col-sm-24">
+            <div class="panel-title row">
+              <div class="row">
+                <div class="col-md-12">
+                  <h6>Summary</h6>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!--<div class="header-content" w3-include-html="views/tile-header.html"></div>-->
+          <div class="mid-content summary-content" w3-include-html="views/tile-mid-content.html"></div>
+          <!--<div class="footer-content" w3-include-html="views/tile-footer.html"></div>-->
+        </div>
+      </div>
+      <div class="hidden-sm hidden-md col-sm-8 col-md-6 col-lg-5 info-bar open">
+        <div class="menu show">
+          <a href="javascript:;">
+            <i class="icon icon-nav-menu"></i>
+          </a>
+        </div>
+        <ul class="nav nav-tabs" role="tablist">
+          <li role="presentation" class="active"><a href="#info" aria-controls="info" role="tab" data-toggle="tab">Info</a></li>
+          <li role="presentation"><a href="#timeline" aria-controls="timeline" role="tab" data-toggle="tab">Timeline</a></li>
+        </ul>
+
+        <!-- Tab panes -->
+        <div class="tab-content">
+          <div role="tabpanel" class="tab-pane active" id="info">
+            <div class="additional-info" w3-include-html="views/infobar.html"></div>
+          </div>
+          <div role="tabpanel" class="tab-pane" id="timeline">timeline</div>
+        </div>
+        <!--<ul class="tabs">-->
+          <!--<li></li>-->
+          <!--<li><a href="javascript:;">Timeline</a></li>-->
+          <!--<li><a href="javascript:;" class="show-hide-info"><i class="icon icon-nav-menu"></i></a></li>-->
+        <!--</ul>-->
+        <div class="clearfix"></div>
+
+        <div class="footer-note" w3-include-html="views/footer-note.html"></div>
+      </div>
+    </div>
+  </div>
+</div>

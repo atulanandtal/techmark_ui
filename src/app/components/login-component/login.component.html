@@ -1,0 +1,57 @@
+<div class="form-signin">
+  <div class="login-wrapper panel">
+    <div class="login-container">
+      <div class="login-card panel-body">
+        <!--<h2>Login</h2>-->
+        <div class="text-center">
+          <img src="assets/images/logo.png">
+        </div>
+        <form class="mg-top-20" name="form" (ngSubmit)="login(loginForm)" #loginForm="ngForm" novalidate>
+            <div class="has-error">
+              <div class="help-block text-center" *ngIf="loginErrMsg">
+                {{loginErrMsg}}
+              </div>
+            </div>
+            <div class="form-group"
+                 [ngClass]="{'has-error' : email.invalid && (email.dirty || email.touched)}">
+                <label>Email</label>
+                <input type="text" class="form-control"
+                  [pattern]="constantService.validationRegexMapping.EMAIL"
+                  placeholder="Email Id"
+                  name="username" [(ngModel)]="loginInfo.username"
+                  #email="ngModel"
+                  required
+                  autofocus
+                />
+              <div class="help-block text-right" *ngIf="email.invalid && (email.dirty || email.touched)">
+                <div *ngIf="email.errors.required">
+                  Email Id is required.
+                </div>
+                <div *ngIf="email.errors.pattern">
+                  Invalid Email Id.
+                </div>
+              </div>
+            </div>
+            <div class="form-group"
+                 [ngClass]="{'has-error' : password.invalid && (password.dirty || password.touched)}">
+                <label>Password</label>
+                <input type="password" class="form-control"
+                       placeholder="Password"
+                       name="password" [(ngModel)]="loginInfo.password"
+                       #password="ngModel"
+                       required />
+                <div class="help-block text-right" *ngIf="password.invalid && (password.dirty || password.touched)">
+                  <div *ngIf="password.errors.required">
+                    Password is required.
+                  </div>
+                </div>
+                <a href="javascript:;" (click)="forgotPassword()" class="forgot-password">Forgot Password ?</a>
+            </div>
+            <div class="form-group mg-top-20">
+              <button class="btn btn-info btn-block btn-lg">Sign In</button>
+            </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

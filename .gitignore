@@ -1,0 +1,79 @@
+# See http://help.github.com/ignore-files/ for more about ignoring files.
+
+# compiled output
+/dist
+/tmp
+/out-tsc
+
+# dependencies
+/node_modules
+
+# Assets
+/Assets
+
+# IDEs and editors
+/.idea
+.project
+.classpath
+.c9/
+*.launch
+.settings/
+*.sublime-workspace
+
+# IDE - VSCode
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+
+# misc
+/.sass-cache
+/connect.lock
+/coverage
+/libpeerconnection.log
+npm-debug.log
+testem.log
+/typings
+yarn-error.log
+
+# e2e
+/e2e/*.js
+/e2e/*.map
+
+# System Files
+.DS_Store
+Thumbs.db
+#src/assets/icon-font/dist/*
+#src/assets/icon-font/dist/less/iconfont.less
+src/assets/icon-font/dist/fonts/ic.eot
+src/assets/icon-font/dist/fonts/ic.ttf
+src/assets/icon-font/dist/fonts/ic.woff
+src/assets/icon-font/dist/fonts/ic.woff2
+src/assets/fonts/icon-font/ic.woff2
+src/assets/fonts/icon-font/ic.woff
+src/assets/fonts/icon-font/ic.ttf
+src/assets/fonts/icon-font/ic.eot
+src/assets/css/site.css
+*.eot
+*.ttf
+*.woff2
+*.woff
+src/assets/fonts/icon-font/ic.ttf
+*.ttf
+*.woff
+*.woff2
+src/assets/icon-font/dist/fonts/ic.woff2
+*.ttf
+*.woff
+*.eot
+*.eot
+*.woff2
+#*.less
+
+*.eot
+*.ttf
+*.woff
+*.woff2
+
+*.less

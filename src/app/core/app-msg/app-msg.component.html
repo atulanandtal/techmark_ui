@@ -1,0 +1,17 @@
+<div class="alert alert-warning text-center alert-msg" role="alert" *ngIf="showWarning">
+  <button type="button" class="close" (click)="showWarning=false;warningMsg='';">&times;</button>
+  <strong>Warning!</strong> {{warningMsg}}
+</div>
+<div class="alert alert-info text-center alert-msg" role="alert" *ngIf="showInfo">
+  <button type="button" class="close" (click)="showInfo=false;infoMsg='';">&times;</button>
+  <strong>Info!</strong> {{infoMsg}}
+</div>
+<div class="alert alert-danger text-center alert-msg" role="alert" *ngIf="showError">
+  <button type="button" class="close" (click)="showError=false;errorMsg='';">&times;</button>
+  <strong>Error!</strong> {{errorMsg}}
+</div>
+<div class="alert alert-success text-center alert-msg" role="alert" *ngIf="showSuccess">
+  <button type="button" class="close" (click)="showSuccess=false;successMsg='';">&times;</button>
+  <strong>Success!</strong> {{successMsg}}
+</div>
+<div id="dummyFlexSheetId" style="display: none;"></div>

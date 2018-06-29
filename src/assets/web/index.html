@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>5iveC Dashboard</title>
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600" rel="stylesheet">
+  <link rel="stylesheet" href="../css/site.css">
+</head>
+<body>
+<!--Top Navigation-->
+<header w3-include-html="views/header.html"></header>
+
+<!--Main App Container-->
+<div class="container-fluid">
+  <!--<div class="row" w3-include-html="modules/dashboard.html"></div>-->
+  <!--<div class="row" w3-include-html="modules/project-summary.html"></div>-->
+  <div class="row" w3-include-html="modules/todos.html"></div>
+</div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<script src="https://www.w3schools.com/lib/w3.js"></script>
+
+<div w3-include-html="views/delete-confirm.html">
+  <!--<div class="modal fade" id="deleteConfirm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"></div>-->
+  <!--<div class="modal fade" id="sendEmailModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"></div>-->
+</div>
+<div w3-include-html="views/documents.html"></div>
+<div w3-include-html="views/send-email.html"></div>
+<div w3-include-html="views/send-notification.html"></div>
+<script>
+  w3.includeHTML();
+
+  $(function () {
+    $(document).on('click', '.nav li a', function () {
+      var target = $(this).attr('name');
+      var parent = $(this).parent().parent();
+
+      if ($(parent).hasClass('navbar-right')) {
+      } else {
+        $(parent).children().removeClass('active');
+        $(this).parent().addClass('active');
+      }
+    });
+  });
+
+  $(function () {
+    $(document).on('click', '.show-hide-info', function () {
+      $('.info-bar').toggleClass('open');
+    });
+    $(document).on('click', '.show-hide-nav', function () {
+      $('.side-bar').toggleClass('open');
+    });
+
+    $(document).on('click', '.dropdown-menu', function (e) {
+      e.stopPropagation();
+    });
+
+    $(document).on('click', '.add-new-todo', function(){
+      $('.create-edit-todo').removeClass('hidden');
+      $('.create-edit-todo').prev().addClass('hidden');
+    });
+
+    $(document).on('click','.back-to-todo-list', function(){
+      $('.todo-list').removeClass('hidden');
+      $('.todo-list').next().addClass('hidden');
+    })
+  });
+</script>
+</body>
+</html>

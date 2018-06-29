@@ -1,0 +1,10 @@
+<div class='card-container col-sm-24' [ngStyle]="cardStyle">
+    <div class='img-container' class='col-sm-9'>
+        <img [src]='cardData.imageUrl' class='img-card' />
+    </div>
+    <div class='content-container col-sm-14'>
+        <h3>{{cardData.title}}</h3>
+        <h4>{{cardData.subTitle}}</h4>
+        <div>{{cardData.description}}</div>
+    </div>
+</div>
