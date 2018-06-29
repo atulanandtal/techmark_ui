@@ -37,23 +37,23 @@ export class LoginComponent implements OnInit {
         if(!this.commonService.isFormValid(formName)){
           return;
         }
-        this.navigationService.redirectToUserHome();
-        // this.loginService.login(this.loginInfo.username, this.loginInfo.password)
-        // .subscribe(
-        //     data => {
-        //         if(!data.successFlag){
-        //         this.loginErrMsg = data.errorMsg;
-        //         //this.commonService.showErrorMsg(data.errorMsg);
-        //         return;
-        //         }
-        //         this.logger.log('Successfully logged in..');
-        //         this.storageService.storeLoginUserData(data.userData);
-        //         this.navigationService.redirectToUserHome();
-        //     },
-        //     error => {
-        //         this.logger.log('Some error : ', error);
-        //     }
-        // );
+        //this.navigationService.redirectToUserHome();
+         this.loginService.login(this.loginInfo.username, this.loginInfo.password)
+         .subscribe(
+             data => {
+                 if(!data.successFlag){
+                 this.loginErrMsg = data.errorMsg;
+                 //this.commonService.showErrorMsg(data.errorMsg);
+                 return;
+                 }
+                 this.logger.log('Successfully logged in..');
+                 this.storageService.storeLoginUserData({userId : data.userId});
+                 this.navigationService.redirectToUserHome();
+             },
+             error => {
+                 this.logger.log('Some error : ', error);
+             }
+         );
     }
 
     forgotPassword() {

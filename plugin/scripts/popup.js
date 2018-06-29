@@ -6,7 +6,8 @@
             console.log("received msg back");
             if( request.message === "SAVE_DATA" ) {
                 console.log(request.data);
-                postData(request.data);
+                //postData(request.data);
+                getCategory(request.data);
             }
         }
     );
@@ -109,6 +110,32 @@
                 showErrorMsg("Oops something went wrong");
             }
         });
+    }
+
+    function getCategory(data){
+      console.log("getting category", data.url);
+      var auth = "Basic " + btoa("qaGM2Sh3cNqitx9uJrfp:umjeDX3ymHc34jjklHXs");
+      $.ajax({
+        type : 'GET',
+        url : "https://api.webshrinker.com/categories/v3/"+ btoa(data.url),
+        headers : {
+          "Authorization" : auth
+        },
+        dataType:"json",
+        contentType: "application/json",
+        success : function(result){
+          console.log(result);
+          if(result.data[0].categories[0].id == "IAB19"){
+            postData(data);
+          }
+          else{
+            showErrorMsg("Non technical articles are not allowed.");
+          }
+        },
+        error : function (error) {
+          console.log(error);
+        }
+      });
     }
 
     function showErrorMsg(msg){
