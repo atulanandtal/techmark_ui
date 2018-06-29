@@ -3,3 +3,22 @@
     width: 300px;
     padding: 10px;
 }
+
+.login_container{
+  color : #ff7185;
+  padding: 10px;
+}
+
+.button-main {
+  color: #fff;
+   background-color: #ff7185;
+  border-color: #ccc;
+}
+
+.theme-color{
+  color: #ff7185;
+}
+
+.theme-bg-color{
+  background: #ff7185;
+}

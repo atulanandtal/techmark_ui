@@ -20,6 +20,7 @@
             message: "SAVE_DATA",
             data : {
                 url : url || document.location.href,
+                origin : document.location.origin,
                 image : image,
                 title : title,
                 description : description

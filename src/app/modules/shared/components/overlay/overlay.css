@@ -11,6 +11,7 @@
     z-index: 111; /* Specify a stack order in case you're using a different order for other elements */
     cursor: pointer; /* Add a pointer on hover */
     padding: 10px 8px 20px 8px;
+    overflow-y: scroll;
 }
 
 .overlay_close {
