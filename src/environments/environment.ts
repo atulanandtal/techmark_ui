@@ -6,6 +6,7 @@
 export const environment = {
   production: false,
   envName : "Development",
-    serverUrl : "http://172.19.145.26:8080",
-    apiBaseUrl : "/techmark/restapi"
+    serverUrl : "http://172.19.5.53:8080",
+    // apiBaseUrl : "/techmark/restapi"
+    apiBaseUrl: ''
 };

@@ -6,9 +6,6 @@ import 'rxjs/add/operator/map';
 
 @Injectable()
 export class HomeService {
-  private rolesMappedModelObj;
-  private usersMappedModelObj;
-  private companyMappedModelObj;
   constructor(
       private http: HttpService,
       private api: UrlService

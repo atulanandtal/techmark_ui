@@ -1,8 +1,10 @@
-import { Component } from '@angular/core';
+import { Component, ViewChild } from '@angular/core';
 import { Title } from '@angular/platform-browser';
 import { HomeService } from './home.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { ConstantService } from '../../../core/services/constant.service';
+import * as $ from 'jquery';
+import { OverlayComponent } from '../../shared/components/overlay/overlay.component';
 import { NavigationService } from '../../../core/services/navigation.service';
 
 @Component({
@@ -26,8 +28,17 @@ export class HomeComponent {
     cardList: any;
     pageCategory: any;
 
+    @ViewChild(OverlayComponent) overlayRef: OverlayComponent
+
     ngOnInit() {
         this.subscribeList();
+        $(document).ready(function () {
+
+            $('#sidebarCollapse').on('click', function () {
+                $('#sidebar').toggleClass('active');
+            });
+        
+        });
     }
 
   subscribeParams(){
@@ -45,7 +56,10 @@ export class HomeComponent {
         });
     }
 
-  onLogout() {
-    this.navigationService.redirectToLoginComponent();
-  }
+    onCardClicked(e) {
+        this.overlayRef.initOverlay(e);
+    }
+    onLogout() {
+        this.navigationService.redirectToLoginComponent();
+    }
 }
