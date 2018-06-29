@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { Title } from '@angular/platform-browser';
 import { HomeService } from './home.service';
 import { ConstantService } from '../../../core/services/constant.service';
+import { NavigationService } from '../../../core/services/navigation.service';
 
 @Component({
   selector: 'user-home',
@@ -13,7 +14,8 @@ export class HomeComponent {
     constructor(
         private titleService : Title,
         private homeService: HomeService,
-        private constantService: ConstantService
+        private constantService: ConstantService,
+        private navigationService: NavigationService
     ){
         titleService.setTitle("Techmark : Bookmark your technology");
     }
@@ -32,4 +34,8 @@ export class HomeComponent {
             this.cardList = res.result;
         });
     }
+
+  onLogout() {
+    this.navigationService.redirectToLoginComponent();
+  }
 }
