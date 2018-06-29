@@ -1,0 +1,42 @@
+{
+  "name": "TechMark",
+  "version": "1.0",
+  "description": "Build you knowledge base",
+  "permissions": ["activeTab"],
+  "background": {
+//    "scripts": ["scripts/jquery.js", "scripts/background.js"]
+  },
+
+//  "page_action": {
+//    "default_popup": "templates/popup.html",
+//    "default_icon": {
+//      "16": "images/Icon-16.png",
+//      "32": "images/Icon-32.png",
+//      "48": "images/Icon-48.png",
+//      "128": "images/Icon-128.png"
+//    }
+//  },
+  "browser_action": {
+    "default_popup": "templates/popup.html",
+    "default_icon" : "images/techmark_sign.png"
+  },
+
+  "chrome_url_overrides" : {
+    "newtab": "templates/new_tab.html"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "<all_urls>"
+      ],
+      "js": ["scripts/vendor/jquery.js", "scripts/contentscript.js"]
+    }
+  ],
+//  "icons" :{
+//    "16": "images/Icon-16.png",
+//    "32": "images/Icon-32.png",
+//    "48": "images/Icon-48.png",
+//    "128": "images/Icon-128.png"
+//  },
+  "manifest_version": 2
+}

@@ -28,10 +28,11 @@
     "bootstrap": "^3.3.7",
     "bootstrap-datepicker": "^1.7.1",
     "core-js": "^2.5.3",
+    "gulp": "^3.9.1",
+    "gulp-iconfont": "^10.0.1",
     "jquery": "^3.3.1",
     "ng2-validation": "^4.2.0",
     "rxjs": "^5.5.6",
-    "wijmo": "http://prerelease.componentone.com/wijmo5/npm-images/C1Wijmo-Enterprise-Eval-AMD-5.20163.254.tgz",
     "zone.js": "^0.8.20"
   },
   "devDependencies": {
@@ -42,10 +43,8 @@
     "@types/jasminewd2": "~2.0.2",
     "@types/node": "^6.0.101",
     "codelyzer": "~3.0.1",
-    "gulp": "~3.9.1",
     "gulp-autoprefixer": "~4.0.0",
     "gulp-consolidate": "^0.2.0",
-    "gulp-iconfont": "^9.1.0",
     "gulp-less": "~3.3.2",
     "jasmine-core": "~2.6.2",
     "jasmine-spec-reporter": "~4.1.0",

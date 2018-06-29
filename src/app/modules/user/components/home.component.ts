@@ -4,6 +4,7 @@ import { HomeService } from './home.service';
 import { ConstantService } from '../../../core/services/constant.service';
 import * as $ from 'jquery';
 import { OverlayComponent } from '../../shared/components/overlay/overlay.component';
+import { NavigationService } from '../../../core/services/navigation.service';
 
 @Component({
   selector: 'user-home',
@@ -15,7 +16,8 @@ export class HomeComponent {
     constructor(
         private titleService : Title,
         private homeService: HomeService,
-        private constantService: ConstantService
+        private constantService: ConstantService,
+        private navigationService: NavigationService
     ){
         titleService.setTitle("Techmark : Bookmark your technology");
     }
@@ -46,5 +48,8 @@ export class HomeComponent {
 
     onCardClicked(e) {
         this.overlayRef.initOverlay(e);
+    }
+    onLogout() {
+        this.navigationService.redirectToLoginComponent();
     }
 }

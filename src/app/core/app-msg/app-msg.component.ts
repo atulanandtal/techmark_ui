@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonService } from 'app/core/services/common.service';
 import { MsgModel } from './msg-model';
-import { FlexSheet} from 'wijmo/wijmo.grid.sheet';
 
 @Component({
   selector: 'app-msg',
@@ -35,11 +34,5 @@ export class AppMsgComponent implements OnInit{
         this.successMsg = data.successMsg;
       }
     )
-  }
-
-  ngAfterViewChecked(){
-    if(!this.commonService.dummyFlexSheetInstance){
-      this.commonService.dummyFlexSheetInstance = new FlexSheet(document.getElementById("dummyFlexSheetId"));
-    }
   }
 }
