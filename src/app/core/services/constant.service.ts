@@ -12,7 +12,7 @@ export class ConstantService {
     ALL_SHARED: 'Shared With All !!!',
     MY_SHARED: 'Shared By Me !!!',
     MY_FAVOURITES: 'My Favourites !!!',
-    READ_LATER: 'Marked For Reading Later !!!'
+    ARCHIVE: 'Articles You Archived !!!'
   }
 
   formMessage = {

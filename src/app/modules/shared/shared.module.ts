@@ -3,6 +3,7 @@ import { CommonModule, DatePipe } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { CardComponent } from './components/card.component/card.component';
 import { OverlayComponent } from './components/overlay/overlay.component';
+import { UrlService } from './services/url.service';
 
 @NgModule({
   declarations: [
@@ -21,6 +22,6 @@ import { OverlayComponent } from './components/overlay/overlay.component';
     CardComponent,
     OverlayComponent
   ],
-  providers: []
+  providers: [UrlService]
 })
 export class SharedModule { }

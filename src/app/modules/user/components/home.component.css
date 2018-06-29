@@ -29,12 +29,15 @@
 }
 
 .side-item {
-    font-size: x-large;
     background-color: black;
     color: white;
+    font-size: initial;
+    color: white;
+    padding: 12px;
 }
+
 .side-item:hover {
-    background-color: grey;
+    background-color: rgb(114, 107, 107);
     color: white;
 }
 

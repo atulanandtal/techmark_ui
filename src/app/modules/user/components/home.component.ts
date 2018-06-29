@@ -39,7 +39,7 @@ export class HomeComponent {
     }
 
     subscribeList(category?) {
-        this.pageCategory = category || 'ALL_SHARED';
+        this.pageCategory = category || 'TRENDING';
         this.homeService.getList(this.pageCategory).subscribe(res => {
             console.log(res);
             this.cardList = res.result;
