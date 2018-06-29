@@ -1,7 +1,9 @@
-import { Component } from '@angular/core';
+import { Component, ViewChild } from '@angular/core';
 import { Title } from '@angular/platform-browser';
 import { HomeService } from './home.service';
 import { ConstantService } from '../../../core/services/constant.service';
+import * as $ from 'jquery';
+import { OverlayComponent } from '../../shared/components/overlay/overlay.component';
 
 @Component({
   selector: 'user-home',
@@ -21,8 +23,17 @@ export class HomeComponent {
     cardList: any;
     pageCategory: any;
 
+    @ViewChild(OverlayComponent) overlayRef: OverlayComponent
+
     ngOnInit() {
         this.subscribeList();
+        $(document).ready(function () {
+
+            $('#sidebarCollapse').on('click', function () {
+                $('#sidebar').toggleClass('active');
+            });
+        
+        });
     }
 
     subscribeList(category?) {
@@ -31,5 +42,9 @@ export class HomeComponent {
             console.log(res);
             this.cardList = res.result;
         });
+    }
+
+    onCardClicked(e) {
+        this.overlayRef.initOverlay(e);
     }
 }

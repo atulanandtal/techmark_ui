@@ -1,0 +1,17 @@
+<div id="overlay">
+    <div class='panel panel-default' *ngIf='overlayData'>
+        <div class='panel-heading'>
+            <h1 class='text-center'>{{overlayData.title}}</h1>
+        </div>
+        <div class='panel-body'>
+            <iframe [src]="webUrl" class='iframe-css'></iframe>
+        </div>
+        <div class='panel-footer'>
+            <h2 class='text-right'>
+                <button class='btn btn-danger btn-md overlay_close' (click)='removeOverlay()'>
+                    Close
+                </button>
+            </h2>
+        </div>
+    </div>
+</div>

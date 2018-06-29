@@ -2,10 +2,12 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CommonModule, DatePipe } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { CardComponent } from './components/card.component/card.component';
+import { OverlayComponent } from './components/overlay/overlay.component';
 
 @NgModule({
   declarations: [
-    CardComponent
+    CardComponent,
+    OverlayComponent
   ],
   imports: [
     FormsModule,
@@ -16,7 +18,8 @@ import { CardComponent } from './components/card.component/card.component';
     CommonModule,
     FormsModule,
     ReactiveFormsModule,
-    CardComponent
+    CardComponent,
+    OverlayComponent
   ],
   providers: []
 })

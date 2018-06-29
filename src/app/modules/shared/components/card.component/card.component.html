@@ -1,4 +1,4 @@
-<div class='card-container col-sm-24' [ngStyle]="cardStyle">
+<div class='card-container col-xs-24' [ngStyle]="cardStyle" (click)='onCardClick(cardData)'>
     <div class='img-container' class='col-sm-9'>
         <img [src]='cardData.imageUrl' class='img-card' />
     </div>
@@ -6,5 +6,17 @@
         <h3>{{cardData.title}}</h3>
         <h4>{{cardData.subTitle}}</h4>
         <div>{{cardData.description}}</div>
+        <div class='card-bottom row'>
+            <h4>
+                <div class='col-xs-12 text-left'>
+                    Shared By <i><b>{{cardData.sharedBy || 'Anonymous'}}</b></i>
+                </div>
+                <div class='col-xs-12 text-right'>
+                    <span>{{cardData.likes || '0'}} Likes</span>
+                    &nbsp;
+                    <span>{{cardData.views || '0'}} Views</span>
+                </div>
+            </h4>
+        </div>
     </div>
 </div>

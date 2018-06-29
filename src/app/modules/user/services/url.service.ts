@@ -6,6 +6,7 @@ import { ApiUrlService } from 'app/core/services/api-url.service';
 export class UrlService extends ApiUrlService{
 
   getCardList(category) {
-      return '/assets/jsons/sample.json';
+      // return '/assets/jsons/sample.json';
+    return this.baseUrl+'/posts/'+category+'/'+1;
   }
 }
