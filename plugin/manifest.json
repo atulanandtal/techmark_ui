@@ -2,7 +2,7 @@
   "name": "TechMark",
   "version": "1.0",
   "description": "Build you knowledge base",
-  "permissions": ["activeTab"],
+  "permissions": ["activeTab", "storage"],
   "background": {
 //    "scripts": ["scripts/jquery.js", "scripts/background.js"]
   },
