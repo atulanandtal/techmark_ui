@@ -1,4 +1,5 @@
 import { Component, Input, Output, EventEmitter } from '@angular/core';
+import { SharedService } from '../../services/shared.service';
 
 @Component({
   selector: 'card',
@@ -20,7 +21,7 @@ export class CardComponent {
         "estimatedMinutes": "1 minute",
         "like": false
     }
-    constructor(){
+    constructor(private sharedService: SharedService){
         
     }
 
@@ -42,5 +43,16 @@ export class CardComponent {
         card.imageUrl = card.imageUrl || this.defaultValues.imageUrl;
         card.description = card.description || this.defaultValues.description;
         this.cardClicked.emit(card);
+    }
+
+    onVoteClick(type, cardId) {
+        this.cardData.liked = !this.cardData.liked;
+        // this.sharedService.vote(type, cardId).subscribe(res => {
+        //     console.log(res);
+        // });
+    }
+
+    onArchiveClick(type, cardId) {
+        this.cardData.archived = !this.cardData.archived;
     }
 }

@@ -1,22 +1,32 @@
-<div class='card-container col-xs-24' [ngStyle]="cardStyle" (click)='onCardClick(cardData)'>
+<div class='card-container col-xs-24' [ngStyle]="cardStyle">
     <div class='img-container' class='col-sm-9'>
         <img [src]='cardData.imageUrl || defaultValues.imageUrl' class='img-card' />
     </div>
     <div class='content-container col-sm-14'>
-        <h3>{{cardData.title || defaultValues.title}}</h3>
-        <h4>{{cardData.subTitle || defaultValues.subTitle}}</h4>
-        <div>{{cardData.description || defaultValues.description}}</div>
-        <div class='card-bottom row'>
-            <h4>
-                <div class='col-xs-12 text-left'>
-                    Shared By <i><b>{{cardData.sharedBy || 'Anonymous'}}</b></i>
-                </div>
-                <div class='col-xs-12 text-right'>
-                    <span>{{cardData.likes || '0'}} Likes</span>
-                    &nbsp;
-                    <span>{{cardData.views || '0'}} Views</span>
-                </div>
-            </h4>
+        <div class='row'>
+            <h3 class='col-sm-18 text-left' (click)='onCardClick(cardData)'>{{cardData.title || defaultValues.title}}</h3>
+            <h3 class='col-sm-6 text-right' >
+                <img class='icon-small' src='assets/images/heart.png' (click)='onVoteClick("dislike", cardData.id)' *ngIf='cardData.liked' title='You have liked this article. Click to dislike.' />
+                <img class='icon-small' src='assets/images/heart-dislike.png' (click)='onVoteClick("like", cardData.id)' *ngIf='!cardData.liked' title='Click to like this article.' />
+                <img class='icon-small' src='assets/images/save-later.png' (click)='onArchiveClick("archive", cardData.id)' *ngIf='!cardData.archived' title='Click this icon to archive.' />
+                <img class='icon-small' src='assets/images/archived.jpg' (click)='onArchiveClick("unarchive", cardData.id)' *ngIf='cardData.archived' title='This article is archived. Click to unarchive.' />
+            </h3>
+        </div>
+        <div (click)='onCardClick(cardData)'>
+            <h4>{{cardData.subTitle || defaultValues.subTitle}}</h4>
+            <div>{{cardData.description || defaultValues.description}}</div>
+            <div class='card-bottom row'>
+                <h4>
+                    <div class='col-xs-12 text-left'>
+                        Shared By <i><b>{{cardData.sharedBy || 'Anonymous'}}</b></i>
+                    </div>
+                    <div class='col-xs-12 text-right'>
+                        <span>{{cardData.totalLikes || '0'}} Likes</span>
+                        &nbsp;
+                        <span>{{cardData.totalViews || '0'}} Views</span>
+                    </div>
+                </h4>
+            </div>
         </div>
     </div>
 </div>

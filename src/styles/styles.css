@@ -128,3 +128,10 @@ hr{
 .form-control[disabled] {
   color: black;
 }
+
+
+.icon-small {
+  /* background-image: url('assets/images/heart.png'); */
+  height: 30px;
+  width: 30px;
+}

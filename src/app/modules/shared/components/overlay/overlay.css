@@ -24,12 +24,6 @@
     height: 750px;
 }
 
-.icon-like, .icon-dislike {
-    /* background-image: url('assets/images/heart.png'); */
-    height: 30px;
-    width: 30px;
-}
-
 .panel-heading, .panel-footer {
     background-color: white;
 }

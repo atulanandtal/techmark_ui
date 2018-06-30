@@ -4,6 +4,7 @@ import { NgModule } from '@angular/core';
 import { CardComponent } from './components/card.component/card.component';
 import { OverlayComponent } from './components/overlay/overlay.component';
 import { UrlService } from './services/url.service';
+import { SharedService } from './services/shared.service';
 
 @NgModule({
   declarations: [
@@ -22,6 +23,6 @@ import { UrlService } from './services/url.service';
     CardComponent,
     OverlayComponent
   ],
-  providers: [UrlService]
+  providers: [UrlService, SharedService]
 })
 export class SharedModule { }

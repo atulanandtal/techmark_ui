@@ -4,8 +4,8 @@
             <h1 class='col-xs-24'>
                 <div class='col-sm-12 text-left'>{{overlayData.title}}</div>
                 <div class='col-sm-12 text-right'>
-                    <img class='icon-like' src='assets/images/heart.png' (click)='onVoteClick("dislike", overlayData.id)' *ngIf='overlayData.like' title='You have liked this article. Click to dislike.' />
-                    <img class='icon-dislike' src='assets/images/heart-dislike.png' (click)='onVoteClick("like", overlayData.id)' *ngIf='!overlayData.like' title='Click to like this article.' />
+                    <img class='icon-small' src='assets/images/heart.png' (click)='onVoteClick("dislike", overlayData.id)' *ngIf='overlayData.like' title='You have liked this article. Click to dislike.' />
+                    <img class='icon-small' src='assets/images/heart-dislike.png' (click)='onVoteClick("like", overlayData.id)' *ngIf='!overlayData.like' title='Click to like this article.' />
                     &nbsp;
                     <span (click)='removeOverlay()'>X</span>
                 </div>

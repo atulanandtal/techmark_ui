@@ -2,17 +2,18 @@ import { Component, Input } from '@angular/core';
 import * as $ from 'jquery';
 import { DomSanitizer  } from '@angular/platform-browser';
 import { OverlayService } from './overlay.service';
+import { SharedService } from '../../services/shared.service';
 
 @Component({
   selector: 'overlay',
   templateUrl: './overlay.component.html',
   styleUrls: ['overlay.css'],
-  providers : [OverlayService]
+  providers : []
 })
 export class OverlayComponent {
     @Input() overlayData: any;
     webUrl: any;
-    constructor(private sanitizer: DomSanitizer, private overlayService: OverlayService ){
+    constructor(private sanitizer: DomSanitizer, private sharedService: SharedService ){
         
     }
 
@@ -34,7 +35,7 @@ export class OverlayComponent {
 
     onVoteClick(type, postId) {
         // this.overlayData.like = !this.overlayData.like;
-        this.overlayService.vote(type, postId).subscribe(res => {
+        this.sharedService.vote(type, postId).subscribe(res => {
             console.log(res);
         });
     }
