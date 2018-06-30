@@ -21,7 +21,7 @@ export class CardComponent {
         "like": false
     }
     constructor(){
-        
+
     }
 
     ngOnInit() {
@@ -37,10 +37,11 @@ export class CardComponent {
     }
 
     onCardClick(card) {
-        card.title = card.title || this.defaultValues.title;
-        card.subTitle = card.title || this.defaultValues.subtitle;
-        card.imageUrl = card.imageUrl || this.defaultValues.imageUrl;
-        card.description = card.description || this.defaultValues.description;
-        this.cardClicked.emit(card);
+        //card.title = card.title || this.defaultValues.title;
+        //card.subTitle = card.title || this.defaultValues.subtitle;
+        //card.imageUrl = card.imageUrl || this.defaultValues.imageUrl;
+        //card.description = card.description || this.defaultValues.description;
+        //this.cardClicked.emit(card);
+        window.open(card.url);
     }
 }
