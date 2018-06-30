@@ -56,8 +56,11 @@ export class HomeComponent {
         });
     }
 
-    onCardClicked(e) {
-        this.overlayRef.initOverlay(e);
+    onCardArchiveClicked(e) {
+        // console.log(e);
+        if(this.pageCategory == 'READ_LATER') {
+            this.subscribeList(this.pageCategory);
+        }
     }
     onLogout() {
         this.navigationService.redirectToLoginComponent();

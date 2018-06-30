@@ -10,7 +10,7 @@ import { SharedService } from '../../services/shared.service';
 export class CardComponent {
     @Input() cardData: any;
     cardStyle: any;
-    @Output() cardClicked = new EventEmitter();
+    @Output() cardArchiveClicked = new EventEmitter();
     defaultValues = {
         title: 'Sample Title',
         subtitle: 'Sample Subtitle',
@@ -64,6 +64,7 @@ export class CardComponent {
     onArchiveClick(type, cardId) {
         this.sharedService.archive(type, cardId).subscribe(res => {
             this.cardData.archived = !this.cardData.archived;
+            this.cardArchiveClicked.emit(true);
         });
     }
 }
