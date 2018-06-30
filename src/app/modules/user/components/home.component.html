@@ -75,7 +75,7 @@
                         <div *ngFor='let card of cardList'>
                             <div class='row'>
                                 <div class='col-sm-24'>
-                                    <card [cardData]='card' (cardClicked)='onCardClicked($event)'></card>
+                                    <card [cardData]='card' (cardArchiveClicked)='onCardArchiveClicked($event)'></card>
                                 </div>
                             </div>
                         </div>
