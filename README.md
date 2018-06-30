@@ -1,6 +1,4 @@
-# 5iveC
 
-5iveC front-end application. 
 Framework `Angular 4.0`
 Build Tool `Angular CLI 1.2.7`
 
