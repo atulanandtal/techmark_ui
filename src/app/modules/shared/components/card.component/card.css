@@ -30,3 +30,11 @@
   margin: 15px 0px 15px 0px;
   border: 1px solid #e2e2e2;
 }
+
+.stats_bottom{
+  display: block;
+  position: absolute;
+  top: 222px;
+  bottom: 0;
+  width: 100%;
+}
