@@ -40,10 +40,14 @@
     
         <ul class="list-unstyled components">
             <li class='side-item' (click)='subscribeList("TRENDING")' role='button'>Trending</li>
+            <li class="divider"></li>
             <li class='side-item' (click)='subscribeList("ALL_SHARED")' role='button'>All Shared</li>
-            <li class='side-item' (click)='subscribeList("MY_FAVOURITES")' role='button'>My Favorites</li>
-            <li class='side-item' (click)='subscribeList("READ_LATER")' role='button'>Read Later</li>
+            <li class="divider"></li>
+            <!-- <li class='side-item' (click)='subscribeList("MY_FAVOURITES")' role='button'>My Favorites</li> -->
+            <li class='side-item' (click)='subscribeList("ARCHIVE")' role='button'>Archived</li>
+            <li class="divider"></li>
             <li class='side-item' (click)='subscribeList("MY_SHARED")' role='button'>My Shared</li>
+            <li class="divider"></li>
         </ul>
     </nav>
 
