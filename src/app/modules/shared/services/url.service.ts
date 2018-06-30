@@ -25,4 +25,9 @@ export class UrlService extends ApiUrlService{
             return this.baseUrl+'/post/unarchive/'+postId+'/'+obj.userId;
         }
     }
+
+    getViewCardUrl(postId) {
+        let obj = JSON.parse(localStorage.getItem("fcDB"));
+        return this.baseUrl+'/post/'+postId+'/'+obj.userId;
+    }
 }

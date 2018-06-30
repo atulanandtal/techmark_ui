@@ -43,6 +43,8 @@ export class CardComponent {
         //card.imageUrl = card.imageUrl || this.defaultValues.imageUrl;
         //card.description = card.description || this.defaultValues.description;
         //this.cardClicked.emit(card);
+        this.sharedService.viewCard(card.id).subscribe(res => {
+        });
         window.open(card.url);
     }
 
@@ -60,6 +62,8 @@ export class CardComponent {
     }
 
     onArchiveClick(type, cardId) {
-        this.cardData.archived = !this.cardData.archived;
+        this.sharedService.archive(type, cardId).subscribe(res => {
+            this.cardData.archived = !this.cardData.archived;
+        });
     }
 }

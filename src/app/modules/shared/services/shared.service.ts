@@ -15,4 +15,12 @@ export class SharedService {
     vote(type, postId) {
         return this.http.get<any>(this.api.getVotingUrl(type, postId));
     }
+
+    archive(type, postId) {
+        return this.http.get<any>(this.api.getArchiveUrl(type, postId));
+    }
+
+    viewCard(postId) {
+        return this.http.get<any>(this.api.getViewCardUrl(postId));
+    }
 }

@@ -16,16 +16,19 @@
             <h4>{{cardData.subTitle || defaultValues.subTitle}}</h4>
             <div>{{cardData.description || defaultValues.description}}</div>
             <div class='card-bottom row'>
-                <h4>
-                    <div class='col-xs-12 text-left'>
+                <div>
+                    <h4 class='col-xs-12 text-left'>
                         Shared By <i><b>{{cardData.sharedBy || 'Anonymous'}}</b></i>
-                    </div>
+                    </h4>
                     <div class='col-xs-12 text-right'>
-                        <span>{{cardData.totalLikes || '0'}} Likes</span>
-                        &nbsp;
-                        <span>{{cardData.totalViews || '0'}} Views</span>
+                        <h4>
+                            <span>{{cardData.totalLikes || '0'}} Likes</span>
+                            &nbsp;
+                            <span>{{cardData.totalViews || '0'}} Views</span>
+                        </h4>
+                        <div class='col-xs-24 text-right'><b>Estimated Reading Time : {{cardData.estimatedMinutes}}</b></div>
                     </div>
-                </h4>
+                </div>
             </div>
         </div>
     </div>
