@@ -96,13 +96,19 @@
                 url : data.url,
                 imageUrl : data.image,
                 title : data.title,
-                description : data.description
+                description : data.description,
+                siteRank : data.siteRank
             }),
             dataType:"json",
             contentType: "application/json",
             success : function(msg){
                 console.log(msg);
-                showSuccessMsg("Article posted successfully.");
+                if(msg.successFlag){
+                  showSuccessMsg("Article posted successfully.");
+                }
+                else{
+                  showErrorMsg(msg.errorMsg);
+                }
 
             },
             error : function (error) {
@@ -126,7 +132,8 @@
         success : function(result){
           console.log(result);
           if(result.data[0].categories[0].id == "IAB19"){
-            postData(data);
+            getSiteRank(data);
+            //postData(data);
           }
           else{
             showErrorMsg("Non technical articles are not allowed.");
@@ -134,6 +141,28 @@
         },
         error : function (error) {
           console.log(error);
+        }
+      });
+    }
+
+    function getSiteRank(data){
+      console.log("Getting site rank");
+      $.ajax({
+        type : 'GET',
+        url : "http://data.alexa.com/data?cli=10&dat=s&url="+ data.origin,
+        dataType:"json",
+        contentType: "application/json",
+        success : function(result){
+          r = /<REACH RANK="(\d+)"/g;
+          n = r.exec(result.responseText);
+          data.siteRank = n[1];
+          postData(data);
+        },
+        error : function (result) {
+          r = /<REACH RANK="(\d+)"/g;
+          n = r.exec(result.responseText);
+          data.siteRank = n[1];
+          postData(data);
         }
       });
     }

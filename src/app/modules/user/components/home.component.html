@@ -15,7 +15,7 @@
       <ul class="nav navbar-nav navbar-right">
         <li>
           <a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" title="User Settings">
-            Hi Jaggu {{loggedInUserName}}
+            Hi {{loggedInUserName}}
             <span class="icon icon-arrow-drop-down"></span>
           </a>
           <ul class="dropdown-menu">
@@ -33,11 +33,11 @@
 <div class="wrapper">
 
     <!-- Sidebar -->
-    <nav id="sidebar">
+    <nav id="sidebar" class="siderbar_container">
         <div class="sidebar-header">
             <h3></h3>
         </div>
-    
+
         <ul class="list-unstyled components">
             <li class='side-item' (click)='subscribeList("TRENDING")' role='button'>Trending</li>
             <li class="divider"></li>
@@ -52,7 +52,7 @@
     </nav>
 
     <!-- Page Content -->
-    <div id="content">
+    <div id="content" style="margin-left: 245px;">
 
         <div class='col-sm-24 home-container'>
             <div class="panel-group">
@@ -60,12 +60,12 @@
                     <div class="panel-heading">
                         <!-- <nav class="navbar navbar-expand-lg navbar-light bg-light">
                             <div class="container-fluid">
-                    
+
                                 <button type="button" id="sidebarCollapse" class="btn btn-info">
                                     <i class="fas fa-align-left"></i>
                                     <span>Toggle Sidebar</span>
                                 </button>
-                    
+
                             </div>
                         </nav> -->
                         <h1 class='text-center'>{{constantService.headerMapping[pageCategory]}}</h1>

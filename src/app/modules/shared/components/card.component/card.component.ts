@@ -38,18 +38,25 @@ export class CardComponent {
     }
 
     onCardClick(card) {
-        card.title = card.title || this.defaultValues.title;
-        card.subTitle = card.title || this.defaultValues.subtitle;
-        card.imageUrl = card.imageUrl || this.defaultValues.imageUrl;
-        card.description = card.description || this.defaultValues.description;
-        this.cardClicked.emit(card);
+        //card.title = card.title || this.defaultValues.title;
+        //card.subTitle = card.title || this.defaultValues.subtitle;
+        //card.imageUrl = card.imageUrl || this.defaultValues.imageUrl;
+        //card.description = card.description || this.defaultValues.description;
+        //this.cardClicked.emit(card);
+        window.open(card.url);
     }
 
     onVoteClick(type, cardId) {
-        this.cardData.liked = !this.cardData.liked;
-        // this.sharedService.vote(type, cardId).subscribe(res => {
-        //     console.log(res);
-        // });
+        this.sharedService.vote(type, cardId).subscribe(res => {
+            // console.log(res);
+            this.cardData.liked = !this.cardData.liked;
+            if(type=='like') {
+                this.cardData.totalLikes++;
+            }
+            else {
+                this.cardData.totalLikes--;
+            }
+        });
     }
 
     onArchiveClick(type, cardId) {

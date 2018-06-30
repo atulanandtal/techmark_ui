@@ -1,4 +1,4 @@
-<div class='card-container col-xs-24' [ngStyle]="cardStyle">
+<div class='card-container col-xs-24 card-style'>
     <div class='img-container' class='col-sm-9'>
         <img [src]='cardData.imageUrl || defaultValues.imageUrl' class='img-card' />
     </div>
@@ -8,7 +8,7 @@
             <h3 class='col-sm-6 text-right' >
                 <img class='icon-small' src='assets/images/heart.png' (click)='onVoteClick("dislike", cardData.id)' *ngIf='cardData.liked' title='You have liked this article. Click to dislike.' />
                 <img class='icon-small' src='assets/images/heart-dislike.png' (click)='onVoteClick("like", cardData.id)' *ngIf='!cardData.liked' title='Click to like this article.' />
-                <img class='icon-small' src='assets/images/save-later.png' (click)='onArchiveClick("archive", cardData.id)' *ngIf='!cardData.archived' title='Click this icon to archive.' />
+                <img class='icon-small' src='assets/images/save-later.png' (click)='onArchiveClick("archive", cardData.id)' *ngIf='!cardData.archived' title='Click to archive this article.' />
                 <img class='icon-small' src='assets/images/archived.jpg' (click)='onArchiveClick("unarchive", cardData.id)' *ngIf='cardData.archived' title='This article is archived. Click to unarchive.' />
             </h3>
         </div>

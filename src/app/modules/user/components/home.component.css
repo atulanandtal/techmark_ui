@@ -24,27 +24,33 @@
 }
 
 #sidebar {
-    background-color: black;
+    /*background-color: black;*/
     color: white;
 }
 
 .side-item {
-    background-color: black;
-    color: white;
+    background-color: #fff;
+    color: black;
     font-size: initial;
-    color: white;
     padding: 12px;
 }
 
 .side-item:hover {
-    background-color: rgb(114, 107, 107);
-    color: white;
+    background-color: #e2e2e2;
+    color: black;
 }
 
 #content {
     width: 100%;
 }
 
+.siderbar_container {
+  position: fixed;
+  background: #fff;
+  /*z-index: 999999999;*/
+  height: 1000px;
+  border-right: 1px solid #e2e2e2;
+}
 
 
 
@@ -108,8 +114,8 @@
     padding: 10px !important;
 }
 
-/* Changing the arrow position to bottom center position, 
-   translateX(50%) works with right: 50% 
+/* Changing the arrow position to bottom center position,
+   translateX(50%) works with right: 50%
    to accurately  center the arrow */
 #sidebar.active .dropdown-toggle::after {
     top: auto;
@@ -134,11 +140,11 @@
 
     /* Reappearing the sidebar on toggle button click */
     #sidebar {
-        margin-left: 0; 
+        margin-left: 0;
     }
 
 
-    /* Toggling the sidebar header content, 
+    /* Toggling the sidebar header content,
        hide the big heading [h3] and showing the small heading [strong] and vice versa
     */
     #sidebar .sidebar-header strong {
@@ -169,8 +175,8 @@
         padding: 10px !important;
     }
 
-    /* Changing the arrow position to bottom center position, 
-      translateX(50%) works with right: 50% 
+    /* Changing the arrow position to bottom center position,
+      translateX(50%) works with right: 50%
       to accurately  center the arrow */
     .dropdown-toggle::after {
         top: auto;
