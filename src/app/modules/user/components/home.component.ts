@@ -6,6 +6,7 @@ import { ConstantService } from '../../../core/services/constant.service';
 import * as $ from 'jquery';
 import { OverlayComponent } from '../../shared/components/overlay/overlay.component';
 import { NavigationService } from '../../../core/services/navigation.service';
+import { StorageService } from 'app/core/services/storage.service';
 
 @Component({
   selector: 'user-home',
@@ -20,15 +21,17 @@ export class HomeComponent {
         private titleService : Title,
         private homeService: HomeService,
         private constantService: ConstantService,
-        private navigationService: NavigationService
+        private navigationService: NavigationService,
+        private storageService: StorageService
     ){
         titleService.setTitle("Techmark : Bookmark your technology");
+      this.subscribeParams();
     }
 
     cardList: any;
     pageCategory: any;
 
-    @ViewChild(OverlayComponent) overlayRef: OverlayComponent
+    @ViewChild(OverlayComponent) overlayRef: OverlayComponent;
 
     ngOnInit() {
         this.subscribeList();
@@ -37,7 +40,7 @@ export class HomeComponent {
             $('#sidebarCollapse').on('click', function () {
                 $('#sidebar').toggleClass('active');
             });
-        
+
         });
     }
 
@@ -45,6 +48,9 @@ export class HomeComponent {
     this.activatedRoute.queryParams.subscribe(query=>{
       console.log(query);
       let userId = query.userId;
+      if(userId){
+        this.storageService.storeLoginUserData({userId : userId});
+      }
     });
   }
 
@@ -60,6 +66,7 @@ export class HomeComponent {
         this.overlayRef.initOverlay(e);
     }
     onLogout() {
+      this.storageService.clearLoggedInUserData();
         this.navigationService.redirectToLoginComponent();
     }
 }

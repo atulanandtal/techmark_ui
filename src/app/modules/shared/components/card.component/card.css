@@ -16,6 +16,11 @@
     cursor: pointer;
 }
 
+.card-container[_ngcontent-c4]:hover {
+  cursor: pointer;
+  background: #f9f9f9;
+}
+
 .card-style{
   width: 100%;
   height: 300px;
