@@ -16,6 +16,11 @@
     cursor: pointer;
 }
 
+.card-container:hover {
+  cursor: pointer;
+  background: #f9f9f9;
+}
+
 .card-style{
   width: 100%;
   height: 300px;
@@ -24,4 +29,12 @@
   padding: 12px 0px;
   margin: 15px 0px 15px 0px;
   border: 1px solid #e2e2e2;
+}
+
+.stats_bottom{
+  display: block;
+  position: absolute;
+  top: 222px;
+  bottom: 0;
+  width: 100%;
 }

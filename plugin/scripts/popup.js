@@ -78,7 +78,7 @@
           loggedInUserId = result.userId;
           setStorage(result);
           onLoginSuccess();
-          showSuccessMsg("Welcome" + result.username);
+          showSuccessMsg("Welcome  " + result.username);
         },
         error : function (error) {
           console.log(error);
@@ -123,7 +123,7 @@
       var auth = "Basic " + btoa("qaGM2Sh3cNqitx9uJrfp:umjeDX3ymHc34jjklHXs");
       $.ajax({
         type : 'GET',
-        url : "https://api.webshrinker.com/categories/v3/"+ btoa(data.url),
+        url : "https://api.webshrinker.com/categories/v3/"+ btoa(data.origin),
         headers : {
           "Authorization" : auth
         },
@@ -131,7 +131,7 @@
         contentType: "application/json",
         success : function(result){
           console.log(result);
-          if(result.data[0].categories[0].id == "IAB19"){
+          if(result.data[0].categories[0].id.indexOf("IAB19") != -1){
             getSiteRank(data);
             //postData(data);
           }

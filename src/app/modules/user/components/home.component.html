@@ -14,7 +14,7 @@
     <div id="navbar" class="navbar-collapse collapse">
       <ul class="nav navbar-nav navbar-right">
         <li>
-          <a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" title="User Settings">
+          <a href="javascript:;" class="dropdown-toggle" style="color: black;" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" title="User Settings">
             Hi {{loggedInUserName}}
             <span class="icon icon-arrow-drop-down"></span>
           </a>
@@ -39,14 +39,14 @@
         </div>
 
         <ul class="list-unstyled components">
-            <li class='side-item' (click)='subscribeList("TRENDING")' role='button'>Trending</li>
+            <li class='side-item' (click)='subscribeList("TRENDING")' [ngClass]="{'active' : pageCategory == 'TRENDING'}" role='button'>Trending</li>
             <li class="divider"></li>
-            <li class='side-item' (click)='subscribeList("ALL_SHARED")' role='button'>All Shared</li>
+            <li class='side-item' (click)='subscribeList("ALL_SHARED")' [ngClass]="{'active' : pageCategory == 'ALL_SHARED'}" role='button'>All Shared</li>
             <li class="divider"></li>
             <!-- <li class='side-item' (click)='subscribeList("MY_FAVOURITES")' role='button'>My Favorites</li> -->
-            <li class='side-item' (click)='subscribeList("READ_LATER")' role='button'>Archived</li>
+            <li class='side-item' (click)='subscribeList("READ_LATER")' [ngClass]="{'active' : pageCategory == 'READ_LATER'}" role='button'>Archived</li>
             <li class="divider"></li>
-            <li class='side-item' (click)='subscribeList("MY_SHARED")' role='button'>My Shared</li>
+            <li class='side-item' (click)='subscribeList("MY_SHARED")' [ngClass]="{'active' : pageCategory == 'MY_SHARED'}" role='button'>My Shared</li>
             <li class="divider"></li>
         </ul>
     </nav>
@@ -57,19 +57,19 @@
         <div class='col-sm-24 home-container'>
             <div class="panel-group">
                 <div class="panel panel-default">
-                    <div class="panel-heading">
-                        <!-- <nav class="navbar navbar-expand-lg navbar-light bg-light">
-                            <div class="container-fluid">
+                    <!--<div class="panel-heading">-->
+                        <!--&lt;!&ndash; <nav class="navbar navbar-expand-lg navbar-light bg-light">-->
+                            <!--<div class="container-fluid">-->
 
-                                <button type="button" id="sidebarCollapse" class="btn btn-info">
-                                    <i class="fas fa-align-left"></i>
-                                    <span>Toggle Sidebar</span>
-                                </button>
+                                <!--<button type="button" id="sidebarCollapse" class="btn btn-info">-->
+                                    <!--<i class="fas fa-align-left"></i>-->
+                                    <!--<span>Toggle Sidebar</span>-->
+                                <!--</button>-->
 
-                            </div>
-                        </nav> -->
-                        <h1 class='text-center'>{{constantService.headerMapping[pageCategory]}}</h1>
-                    </div>
+                            <!--</div>-->
+                        <!--</nav> &ndash;&gt;-->
+                        <!--<h1 class='text-center'>{{constantService.headerMapping[pageCategory]}}</h1>-->
+                    <!--</div>-->
                     <hr />
                     <div class="panel-body">
                         <div *ngFor='let card of cardList'>
