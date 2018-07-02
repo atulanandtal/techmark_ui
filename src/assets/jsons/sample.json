@@ -11,7 +11,8 @@
             "likes": 43,
             "views": 56,
             "sharedBy": "Atul Anand",
-            "estimatedMinutes": "1 minute"
+            "estimatedMinutes": "1 minute",
+            "like": true
         },
         {
             "id": 1,

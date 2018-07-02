@@ -16,7 +16,7 @@ import { ConstantService } from 'app/core/services/constant.service';
 
 export class LoginComponent implements OnInit {
     returnUrl: string;
-    title: string = '5iveC';
+    title: string = 'TecMark Login';
     loginInfo: any = {};
     loginErrMsg: any;
     constructor(
